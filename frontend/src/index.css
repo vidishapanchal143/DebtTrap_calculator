@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    font-family: 'Hind', 'Noto Sans Gujarati', 'Inter', sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom large touch target utilities for all devices */
+.touch-target {
+  min-height: 48px;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out forwards;
+}
